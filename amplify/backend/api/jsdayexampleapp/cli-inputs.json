@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "jsdayexampleapp",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/juan/projects/jsday/amplify-recipes-example/amplify/backend/api/jsdayexampleapp/schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authauth"
+    },
+    "additionalAuthTypes": [],
+    "conflictResolution": {}
+  }
+}

@@ -1,0 +1,58 @@
+type Speaker @model @auth(rules: [{ allow: private }]) {
+  id: ID!
+  name: String!
+  bio: String
+  talks: [Talk] @manyToMany(relationName: "TalkSpeakers")
+}
+
+type Talk @model @auth(rules: [{ allow: private }]) {
+  id: ID!
+  name: String!
+  description: String!
+  category: Category @hasOne
+  speakers: [Speaker] @manyToMany(relationName: "TalkSpeakers")
+}
+
+type Category @model @auth(rules: [{ allow: private }]) {
+  id: ID!
+  name: String!
+}
+
+type Ticket @model @auth(rules: [{ allow: owner, ownerField: "owner", operations: [read, create, update, delete] }]) {
+  id: ID!
+  owner: String!
+  redeemed: Boolean!
+}
+
+type Message @model @auth(rules: [{ allow: private }]) {
+  id: ID!
+  message: String!
+  owner: String!
+}
+
+# ----------------------------------------
+# Custom queries and mutations
+# ----------------------------------------
+
+input PurchaseTicketInput {
+  cardNumber: String!
+  expirationDate: String!
+  cvc: String!
+}
+
+type PurchaseTicketResult {
+  ticketId: String
+}
+
+input RedeemTicketInput {
+  ticketId: String!
+}
+
+type RedeemTicketResult {
+  ticketId: String
+}
+
+type Mutation {
+  purchaseTicket(input: PurchaseTicketInput): PurchaseTicketResult @function(name: "purchaseTicket-${env}")
+  redeemTicket(input: RedeemTicketInput): RedeemTicketResult @function(name: "redeemTicket-${env}")
+}

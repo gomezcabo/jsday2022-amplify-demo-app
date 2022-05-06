@@ -1,0 +1,16 @@
+{
+  "resourceName": "storage",
+  "policyUUID": "90197d29",
+  "bucketName": "jsdaystorage",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

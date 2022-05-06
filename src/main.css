@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --amplify-colors-font-primary: #333 !important;
+  --amplify-colors-brand-primary-10: theme("colors.orange.100");
+  --amplify-colors-brand-primary-20: theme("colors.orange.200");
+  --amplify-colors-brand-primary-30: theme("colors.orange.300");
+  --amplify-colors-brand-primary-40: theme("colors.orange.400");
+  --amplify-colors-brand-primary-50: theme("colors.orange.500");
+  --amplify-colors-brand-primary-60: theme("colors.orange.600");
+  --amplify-colors-brand-primary-70: theme("colors.orange.700");
+  --amplify-colors-brand-primary-80: theme("colors.orange.600");
+  --amplify-colors-brand-primary-90: theme("colors.orange.900");
+  --amplify-colors-brand-primary-100: theme("colors.orange.900");
+  --amplify-colors-font-secondary: #333;
+  --amplify-colors-font-interactive: theme("colors.orange.600");
+  --amplify-components-button-primary-hover-background-color: theme("colors.orange.700") !important;
+}
+
+[data-amplify-authenticator] {
+  margin-top: 100px;
+}

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "storage": {
+      "Ticket:@model(appsync)": [
+        "create",
+        "read",
+        "update"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}
